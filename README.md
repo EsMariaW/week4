@@ -25,3 +25,28 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Commands used:
+* Angular commands used (in node):
+	* ng serve
+	* o + enter	(to open page in browser)
+	* command + s	(to save project after edit, so that it recompiles and updates the web page)
+	* ng generate component "Login"
+	* ng generate component “Account"
+	
+
+* Npm commands used (installing modules):
+	* sudo npm install -g @angular/cli@17
+	* npm install typescript —save-dev
+	* npm install bootstrap —save
+
+
+* GIT commands used:
+	* git init
+	* git add -A
+    * git status
+	* git commit -m “Week 4 Tutorial setup”
+    * git log
+	* git remote add origin https://github.com/EsMariaW/week4
+	* git branch -M main
+	* git push -f -u origin main
