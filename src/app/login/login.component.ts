@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Component({
   selector: 'app-login',
@@ -11,30 +18,25 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent {
-
-  constructor(private router:Router){}
-
-  all_users=[
-    {email: "Mallory_Beahan63@gmail.com",
-      password: "EEjjK2xWmIanNBe"
-    },
-    {email: "Dimitri_Ziemann90@gmail.com",
-      password: "Xyd7BpnhybS7ZoB"
-    },
-    {email: "Dimitri_ZiemannJanesque90@gmail.com",
-      password: "HdFQTFDv65I6lXJ"
-    }
-  ];
-
-  email = "";
+  username = "";
   password = "";
 
-  itemClicked(){
-    if (this.all_users.find(user =>
-      user.email == this.email && user.password == this.password)){
-        this.router.navigate(['/account']);
-    } else {
-      alert("Not Found");
-    }
+  constructor(private router:Router, private httpClient: HttpClient){}
+
+  submit(){
+    let user = {username: this.username, password: this.password};
+    this.httpClient.post(
+      "http://localhost:3000/api/login", user,httpOptions)
+      .subscribe(
+        (data: any)=> {  // data from res.send()
+          alert("posting: " + JSON.stringify(user));
+          alert("postRes: " + JSON.stringify(data));
+          if(data.valid){
+            sessionStorage.setItem("",JSON.stringify(data));
+          } else {
+            alert("Incorrect details");
+          }
+        }
+      )
   }
 }

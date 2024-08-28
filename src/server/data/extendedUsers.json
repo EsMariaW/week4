@@ -1,0 +1,22 @@
+[{            
+    "username": "AB",
+    "bdate": "01/01/2001",
+    "age": 23,
+    "email": "ab@gmail.com",
+    "password": "abspassword",
+    "valid": "true"
+},{            
+    "username": "CD",
+    "bdate": "02/01/2002",
+    "age": 22,
+    "email": "cd@gmail.com",
+    "password": "cdspassword",
+    "valid": "true"
+},{            
+    "username": "DE",
+    "bdate": "03/01/2000",
+    "age": 24,
+    "email": "de@gmail.com",
+    "password": "despassword",
+    "valid": "true"
+}]
