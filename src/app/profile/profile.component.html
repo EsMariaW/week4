@@ -1,12 +1,10 @@
 <h1>Your Details:</h1>
-
-Username: <br>
-<input type="username" [(ngModel)]="username"> <br>
-
-Birthdate: <br>
-<input type="date" [(ngModel)]="birthdate"> <br>
-
-Age: <br>
-<input type="number" [(ngModel)]="age"> <br>
-
-<button (click)="submit()">Submit</button>
+<form id="loginform">
+    <label for="username">Username:</label>
+    <input type="username" name="username" [(ngModel)]="username" class="form-label">
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" name="birthdate" [(ngModel)]="birthdate" class="form-label">
+    <label for="age">Age:</label>
+    <input type="number" name="age" [(ngModel)]="age" class="form-label">
+    <button (click)="submit()" type="submit">Submit</button>
+</form>
