@@ -23,9 +23,8 @@ export class ProfileComponent {
 
   constructor(private httpClient: HttpClient, private router:Router){
     // ! for not null
-    if (sessionStorage.length == 0){
-      // If the user is not logged in:
-      //    redirect them back to the login page to authenticate themselves.
+    if (sessionStorage.length == 0){ //if the user is not logged in:
+      // redirect them back to the login page to authenticate themselves.
       this.router.navigateByUrl('login');
     } else {
       // When the component loads:
@@ -47,16 +46,12 @@ export class ProfileComponent {
       "http://localhost:3000/afterLogin", user,httpOptions)
       .subscribe(
         (data: any)=> {  // data from res.send()
-          (alert("postRes: " + JSON.stringify(data)));
           // Once edited save the new details back to session storage.
           sessionStorage.setItem("username", data.username.toString());
           sessionStorage.setItem("birthdate", data.birthdate.toString());
           sessionStorage.setItem("age", data.age.toString());
           sessionStorage.setItem("email", data.email.toString());
           sessionStorage.setItem("valid", data.valid.toString());
-        },
-        (error: any)=> {
-          (alert("Failed!"));
         }
       )
   }

@@ -29,10 +29,7 @@ export class LoginComponent {
       "http://localhost:3000/api/login", user,httpOptions)
       .subscribe(
         (data: any)=> {  // data from res.send()
-          alert("posting: " + JSON.stringify(user));
-          alert("postRes: " + JSON.stringify(data));
           if(data.valid){
-            alert("correct");
             // when user logs in, store their detials in sessionStorage
             //    except: do not store password
             sessionStorage.setItem("username", data.username.toString());

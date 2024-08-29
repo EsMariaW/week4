@@ -16,8 +16,8 @@ export class AppComponent {
 
   title = 'week4tut';
 
-  logOut(){
+  logOut(){ // when login button is pressed
     sessionStorage.clear();
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('login'); // redirect user to login page
   }
 }
