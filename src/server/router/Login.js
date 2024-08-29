@@ -11,12 +11,13 @@ module.exports = function(req,res){
         // if no err
         let registeredUsers = JSON.parse(data);
 
-        // check if submitted data matches valid user
+        // check against array of users
+        //      to see if submitted data matches a valid user
+
         if (registeredUsers.find(registeredUser => 
             registeredUser.username == username &&
-            registeredUser.password == password)){
+            registeredUser.password == password)){      // i.e. if matches valid user
 
-            // if matches: show extended data about user
             let userData = registeredUsers.find(registeredUser => 
                 registeredUser.username == username &&
                 registeredUser.password == password)
