@@ -23,9 +23,13 @@ export class ProfileComponent {
 
   constructor(private httpClient: HttpClient, private router:Router){
     // ! for not null
-    this.username = sessionStorage.getItem('username')!;
-    this.birthdate = sessionStorage.getItem('birthdate')!;
-    this.age = Number(sessionStorage.getItem('age'));
+    if (sessionStorage.length == 0){
+      this.router.navigateByUrl('login');
+    } else {
+      this.username = sessionStorage.getItem('username')!;
+      this.birthdate = sessionStorage.getItem('birthdate')!;
+      this.age = Number(sessionStorage.getItem('age'));
+    }
   }
 
   submit(){
