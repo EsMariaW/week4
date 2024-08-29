@@ -34,6 +34,7 @@ export class ProfileComponent {
 
   submit(){
     let user = {
+      "oldUsername": sessionStorage.getItem('username'),
       "username": this.username, 
       "birthdate": this.birthdate, 
       "age": this.age
@@ -47,7 +48,6 @@ export class ProfileComponent {
           sessionStorage.setItem("birthdate", data.birthdate.toString());
           sessionStorage.setItem("age", data.age.toString());
           sessionStorage.setItem("email", data.email.toString());
-          sessionStorage.setItem("password", data.password.toString());
           sessionStorage.setItem("valid", data.valid.toString());
         },
         (error: any)=> {

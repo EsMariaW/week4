@@ -12,7 +12,10 @@ app.use(express.json());
 // for how to respond to data from this port
 // require: get the function from the file
 // ./ => paths relative the the path of the file calling them, i.e. relative to location of server.js
+
+// It will require 1 route “/api/auth” that will respond to a login request.
 app.post('/api/login', require('./router/Login'));
+
 app.post('/afterLogin', require('./router/afterLogin'));
 
 const http = require('http').Server(app);

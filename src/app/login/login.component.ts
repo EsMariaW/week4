@@ -33,12 +33,13 @@ export class LoginComponent {
           alert("postRes: " + JSON.stringify(data));
           if(data.valid){
             alert("correct");
+            // store details in session storage after logging in
+            //    except: do not store password
             sessionStorage.setItem("username", data.username.toString());
             sessionStorage.setItem("birthdate", data.birthdate.toString());
             sessionStorage.setItem("age", data.age.toString());
             sessionStorage.setItem("email", data.email.toString());
-            sessionStorage.setItem("password", data.password.toString());
-            sessionStorage.setItem("vaild", data.valid.toString());
+            sessionStorage.setItem("valid", data.valid.toString());
           } else {
             alert("Incorrect details");
           }

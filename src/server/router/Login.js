@@ -5,7 +5,7 @@ module.exports = function(req,res){
     let password = req.body.password;
 
 
-    fs.readFile("./data/usersCredentials.json","utf8", function(err,data){
+    fs.readFile("./data/usersDetails.json","utf8", function(err,data){
         if (err) throw err;
 
         // if no err
@@ -17,14 +17,13 @@ module.exports = function(req,res){
             registeredUser.password == password)){
 
             // if matches: show extended data about user
-            fs.readFile("./data/usersDetails.json","utf8", function(err,data){
-                let extendedData = JSON.parse(data);
-                let userData = extendedData.find(registeredUser => 
-                    registeredUser.username == username &&
-                    registeredUser.password == password)
-                userData.valid = true;
-                res.send(userData);
-            })
+            let userData = registeredUsers.find(registeredUser => 
+                registeredUser.username == username &&
+                registeredUser.password == password)
+            // send back a property of valid=true 
+            // also send the rest of the user details
+            userData.valid = true;
+            res.send(userData);
         } else {
             res.send({"valid": false});
         }
