@@ -51,21 +51,5 @@ export class ProfileComponent {
         }
       )
   }
-
-
-  //         if(data.valid){
-  //           alert("correct");
-  //           sessionStorage.setItem("username", data.username.toString());
-  //           sessionStorage.setItem("birthdate", data.birthdate.toString());
-  //           sessionStorage.setItem("age", data.age.toString());
-  //           sessionStorage.setItem("email", data.email.toString());
-  //           sessionStorage.setItem("password", data.password.toString());
-  //           sessionStorage.setItem("vaild", data.valid.toString());
-  //         } else {
-  //           alert("Incorrect details");
-  //         }
-  //       }
-  //     )
-  // }
 }
 

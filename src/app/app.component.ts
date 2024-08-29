@@ -13,4 +13,8 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class AppComponent {
   title = 'week4tut';
+
+  logOut(){
+    sessionStorage.clear();
+  }
 }
