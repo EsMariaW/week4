@@ -32,7 +32,13 @@ export class LoginComponent {
           alert("posting: " + JSON.stringify(user));
           alert("postRes: " + JSON.stringify(data));
           if(data.valid){
-            sessionStorage.setItem("",JSON.stringify(data));
+            alert("correct");
+            sessionStorage.setItem("username", data.username.toString());
+            sessionStorage.setItem("birthdate", data.birthdate.toString());
+            sessionStorage.setItem("age", data.age.toString());
+            sessionStorage.setItem("email", data.email.toString());
+            sessionStorage.setItem("password", data.password.toString());
+            sessionStorage.setItem("vaild", data.valid.toString());
           } else {
             alert("Incorrect details");
           }

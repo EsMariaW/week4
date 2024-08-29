@@ -12,8 +12,8 @@ app.use(express.json());
 // for how to respond to data from this port
 // require: get the function from the file
 // ./ => paths relative the the path of the file calling them, i.e. relative to location of server.js
-app.post('/api/login', require('./router/postLogin'));
-app.post('/loginafter', require('./router/postLoginafter'));
+app.post('/api/login', require('./router/Login'));
+app.post('/afterLogin', require('./router/afterLogin'));
 
 const http = require('http').Server(app);
 http.listen(3000, ()=>{
